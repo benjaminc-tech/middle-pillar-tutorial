@@ -1,0 +1,14 @@
+{
+  "name": "Middle Pillar Ritual",
+  "short_name": "Middle Pillar",
+  "description": "A step-by-step Middle Pillar ritual tutorial for manifestation.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#07070d",
+  "theme_color": "#07070d",
+  "icons": [
+    { "src": "icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

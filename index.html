@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>The Middle Pillar Ritual — A Manifestation Practice</title>
+
+<!-- iOS / PWA homescreen support -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Middle Pillar" />
+<meta name="theme-color" content="#07070d" />
+<link rel="manifest" href="manifest.webmanifest" />
+<!-- Optional: drop a 512x512 icon.png into this folder and uncomment the next line -->
+<!-- <link rel="apple-touch-icon" href="icon.png" /> -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-deep: #07070d;
+    --bg-mid: #11101c;
+    --gold: #d4af66;
+    --gold-bright: #f3d989;
+    --gold-dim: #8a6f3d;
+    --ink: #e9e4d4;
+    --ink-dim: #a59f8a;
+    --violet: #2a1f4a;
+    --crimson: #6b1a2a;
+    --check: #f3d989;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-deep);
+    color: var(--ink);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.65;
+    min-height: 100%;
+  }
+  body {
+    background:
+      radial-gradient(ellipse at 20% 10%, rgba(106, 26, 42, 0.22), transparent 60%),
+      radial-gradient(ellipse at 80% 90%, rgba(42, 31, 74, 0.38), transparent 60%),
+      radial-gradient(ellipse at 50% 50%, rgba(212, 175, 102, 0.04), transparent 70%),
+      var(--bg-deep);
+    background-attachment: fixed;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 12% 18%, rgba(255,255,255,0.6), transparent 50%),
+      radial-gradient(1px 1px at 78% 32%, rgba(255,255,255,0.5), transparent 50%),
+      radial-gradient(1px 1px at 33% 72%, rgba(255,255,255,0.45), transparent 50%),
+      radial-gradient(1px 1px at 88% 81%, rgba(255,255,255,0.55), transparent 50%),
+      radial-gradient(1px 1px at 55% 8%, rgba(255,255,255,0.4), transparent 50%),
+      radial-gradient(1px 1px at 5% 55%, rgba(255,255,255,0.5), transparent 50%),
+      radial-gradient(1px 1px at 67% 60%, rgba(255,255,255,0.4), transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 64px 28px 96px;
+  }
+  header {
+    text-align: center;
+    margin-bottom: 56px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(212, 175, 102, 0.25);
+  }
+  .ornament {
+    color: var(--gold);
+    font-size: 22px;
+    letter-spacing: 0.6em;
+    margin-bottom: 18px;
+    opacity: 0.8;
+  }
+  h1 {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: clamp(28px, 5vw, 44px);
+    color: var(--gold-bright);
+    letter-spacing: 0.08em;
+    margin: 0 0 12px;
+    text-shadow: 0 0 30px rgba(212, 175, 102, 0.3);
+  }
+  .subtitle {
+    font-style: italic;
+    color: var(--ink-dim);
+    font-size: 20px;
+    margin: 0;
+  }
+  .pillar-svg {
+    width: 110px;
+    height: 140px;
+    margin: 0 auto 22px;
+    display: block;
+    filter: drop-shadow(0 0 16px rgba(243, 217, 137, 0.4));
+  }
+  .intro {
+    background: linear-gradient(180deg, rgba(42, 31, 74, 0.25), rgba(17, 16, 28, 0.4));
+    border: 1px solid rgba(212, 175, 102, 0.2);
+    border-radius: 4px;
+    padding: 24px 28px;
+    margin-bottom: 48px;
+    font-style: italic;
+    color: var(--ink-dim);
+  }
+  .intro strong { color: var(--gold); font-style: normal; }
+
+  h2 {
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+    font-size: 26px;
+    color: var(--gold-bright);
+    letter-spacing: 0.12em;
+    margin: 56px 0 6px;
+    text-transform: uppercase;
+  }
+  h2 .num {
+    color: var(--gold-dim);
+    font-weight: 400;
+    margin-right: 14px;
+  }
+  .section-sub {
+    font-style: italic;
+    color: var(--ink-dim);
+    margin: 0 0 24px;
+    padding-bottom: 14px;
+    border-bottom: 1px dashed rgba(212, 175, 102, 0.2);
+  }
+  ol.steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  ol.steps > li {
+    position: relative;
+    padding: 14px 12px 14px 56px;
+    margin: 8px 0;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+  }
+  ol.steps > li:hover {
+    background: rgba(212, 175, 102, 0.04);
+  }
+  ol.steps input[type="checkbox"] {
+    position: absolute;
+    left: 14px;
+    top: 18px;
+    width: 22px;
+    height: 22px;
+    margin: 0;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background: var(--bg-mid);
+    border: 1.5px solid var(--gold-dim);
+    border-radius: 3px;
+    transition: all 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  ol.steps input[type="checkbox"]:hover {
+    border-color: var(--gold);
+    box-shadow: 0 0 10px rgba(212, 175, 102, 0.4);
+  }
+  ol.steps input[type="checkbox"]:checked {
+    background: var(--gold);
+    border-color: var(--gold-bright);
+    box-shadow: 0 0 14px rgba(243, 217, 137, 0.6);
+  }
+  ol.steps input[type="checkbox"]:checked::after {
+    content: "✦";
+    color: var(--bg-deep);
+    font-size: 16px;
+    line-height: 1;
+  }
+  ol.steps li.done .step-text {
+    color: var(--ink-dim);
+    text-decoration: line-through;
+    text-decoration-color: rgba(212, 175, 102, 0.4);
+  }
+  .step-text { display: block; }
+  .vibration {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--gold-bright);
+    background: linear-gradient(180deg, rgba(212, 175, 102, 0.12), rgba(212, 175, 102, 0.04));
+    border: 1px solid rgba(212, 175, 102, 0.35);
+    padding: 2px 10px;
+    border-radius: 3px;
+    margin: 0 2px;
+    font-size: 0.92em;
+    text-shadow: 0 0 8px rgba(243, 217, 137, 0.3);
+  }
+  .note {
+    color: var(--ink-dim);
+    font-style: italic;
+    font-size: 0.92em;
+    margin-top: 4px;
+  }
+  .divider {
+    text-align: center;
+    color: var(--gold-dim);
+    letter-spacing: 0.8em;
+    margin: 48px 0 32px;
+    font-size: 18px;
+  }
+  .progress-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: linear-gradient(180deg, var(--bg-deep) 70%, transparent);
+    padding: 12px 0 16px;
+    margin-bottom: 8px;
+  }
+  .progress {
+    height: 3px;
+    background: rgba(212, 175, 102, 0.12);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .progress-bar {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--gold-dim), var(--gold-bright));
+    box-shadow: 0 0 10px var(--gold);
+    transition: width 0.4s ease;
+  }
+  .progress-label {
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--gold-dim);
+    margin-top: 8px;
+    text-transform: uppercase;
+  }
+  .reset {
+    display: inline-block;
+    margin-top: 12px;
+    background: transparent;
+    color: var(--gold-dim);
+    border: 1px solid var(--gold-dim);
+    padding: 6px 18px;
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  .reset:hover {
+    color: var(--bg-deep);
+    background: var(--gold);
+    border-color: var(--gold);
+  }
+  .center { text-align: center; }
+  footer {
+    margin-top: 80px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(212, 175, 102, 0.2);
+    text-align: center;
+    color: var(--ink-dim);
+    font-style: italic;
+    font-size: 16px;
+  }
+  .sphere-label {
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.18em;
+    font-size: 0.85em;
+    text-transform: uppercase;
+  }
+  blockquote {
+    border-left: 2px solid var(--gold-dim);
+    margin: 14px 0 14px 0;
+    padding: 4px 18px;
+    color: var(--ink);
+    font-style: italic;
+  }
+  .color-swatch {
+    display: inline-block;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 6px;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 0 6px currentColor;
+  }
+  .desire-box {
+    background: linear-gradient(180deg, rgba(106, 26, 42, 0.18), rgba(17, 16, 28, 0.4));
+    border: 1px solid rgba(212, 175, 102, 0.25);
+    border-radius: 4px;
+    padding: 20px;
+    margin: 18px 0 8px;
+  }
+  .desire-box label {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .desire-box textarea {
+    width: 100%;
+    min-height: 70px;
+    background: var(--bg-deep);
+    color: var(--ink);
+    border: 1px solid var(--gold-dim);
+    border-radius: 3px;
+    padding: 10px 12px;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 17px;
+    font-style: italic;
+    resize: vertical;
+    outline: none;
+  }
+  .desire-box textarea:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 10px rgba(212, 175, 102, 0.3);
+  }
+  @media (max-width: 600px) {
+    body { font-size: 17px; }
+    .wrap { padding: 32px 18px 60px; }
+    h2 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <svg class="pillar-svg" viewBox="0 0 100 140" aria-hidden="true">
+      <!-- vertical pillar line -->
+      <line x1="50" y1="10" x2="50" y2="130" stroke="#d4af66" stroke-width="1" opacity="0.4"/>
+      <!-- five spheres -->
+      <circle cx="50" cy="14" r="9"  fill="none" stroke="#f3d989" stroke-width="1.4"/>
+      <circle cx="50" cy="42" r="7"  fill="none" stroke="#d4af66" stroke-width="1.3" opacity="0.85"/>
+      <circle cx="50" cy="70" r="9"  fill="none" stroke="#f3d989" stroke-width="1.4"/>
+      <circle cx="50" cy="98" r="8"  fill="none" stroke="#d4af66" stroke-width="1.3" opacity="0.85"/>
+      <circle cx="50" cy="126" r="9" fill="none" stroke="#f3d989" stroke-width="1.4"/>
+    </svg>
+    <div class="ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+    <h1>The Middle Pillar<br/>Ritual</h1>
+    <p class="subtitle">A step-by-step practice for manifestation through the Tree of Life</p>
+  </header>
+
+  <div class="progress-wrap">
+    <div class="progress"><div class="progress-bar" id="bar"></div></div>
+    <div class="progress-label" id="label">0 of 0 completed</div>
+  </div>
+
+  <div class="intro">
+    The <strong>Middle Pillar</strong> is a Golden Dawn rite of inner alchemy. By drawing
+    divine light through five sephirotic centers along the axis of the body — Kether,
+    Daath, Tiphareth, Yesod, and Malkuth — the practitioner builds an inner pillar of
+    living energy that bridges the divine and the material.
+    <br/><br/>
+    When performed for <strong>manifestation</strong>, this current is impressed with a
+    single, clearly held desire. The energy descends from the highest source, is charged
+    with your intention at the heart, circulates through your sphere, and finally roots
+    into Malkuth — the Kingdom, the physical world — where it takes form.
+    <br/><br/>
+    Tick each step as you complete it. Your progress is saved locally in this browser.
+  </div>
+
+  <!-- PREPARATION -->
+  <h2><span class="num">I.</span>Preparation &amp; Intention</h2>
+  <p class="section-sub">Stand or sit upright, spine straight, feet flat on the floor. Hands resting open. Eyes closed.</p>
+  <ol class="steps" data-section="prep">
+    <li><input type="checkbox" /><span class="step-text">Take three slow, deep four-fold breaths (inhale 4 counts, hold 4, exhale 4, hold 4). With each cycle, feel the body settling, the mind clearing, the room growing still.</span></li>
+    <li><input type="checkbox" /><span class="step-text">Perform the Lesser Banishing Ritual of the Pentagram first to purify the sphere. <span class="note">(Optional but traditional. The Middle Pillar is best worked within a cleared space.)</span></span></li>
+    <li><input type="checkbox" /><span class="step-text">Formulate your intention. Phrase it in the <em>present tense</em>, positively, and as a single clear image or sentence. Hold it briefly in mind, then release it — the work will carry it.
+      <div class="desire-box">
+        <label>✦ My Intention ✦</label>
+        <textarea id="desire" placeholder="I am … &#10;e.g. &quot;I am thriving in a life of creative abundance.&quot;"></textarea>
+      </div>
+    </span></li>
+    <li><input type="checkbox" /><span class="step-text">Stand erect. Feel the line of the spine as a vertical channel from crown to soles. This is the <strong>Middle Pillar</strong> — the path of Mildness, the axis of equilibrium between Mercy and Severity.</span></li>
+  </ol>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <!-- KETHER -->
+  <h2><span class="num">II.</span>Kether — The Crown</h2>
+  <p class="section-sub"><span class="color-swatch" style="background:#ffffff;color:#ffffff"></span>Brilliant white light. Just above the crown of the head.</p>
+  <ol class="steps" data-section="kether">
+    <li><input type="checkbox" /><span class="step-text">Direct your attention to a point just above the crown of your head. Begin to visualize a sphere of <strong>brilliant, blinding white light</strong> there — the size of a small grapefruit, pure as a star.</span></li>
+    <li><input type="checkbox" /><span class="step-text">As the sphere becomes vivid, vibrate the divine name three or four times, slowly, feeling the syllables resonate at the crown: <span class="vibration">EHEIEH</span> <span class="note">(Eh-hey-yay — "I Am")</span></span></li>
+    <li><input type="checkbox" /><span class="step-text">Feel the crown center alive and luminous. This is the source — the unconditioned divine point from which all manifestation descends.</span></li>
+  </ol>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <!-- DAATH -->
+  <h2><span class="num">III.</span>Daath — The Throat</h2>
+  <p class="section-sub"><span class="color-swatch" style="background:#a39bb8;color:#a39bb8"></span>Soft lavender-grey light. At the nape of the neck / throat.</p>
+  <ol class="steps" data-section="daath">
+    <li><input type="checkbox" /><span class="step-text">Draw a beam of light down from Kether to the throat, just behind the larynx at the nape of the neck. Form a second sphere there of <strong>lavender-grey light</strong>, slightly smaller than Kether.</span></li>
+    <li><input type="checkbox" /><span class="step-text">Vibrate the divine name three or four times: <span class="vibration">YHVH ELOHIM</span> <span class="note">(Yod-Heh-Vav-Heh El-oh-heem)</span></span></li>
+    <li><input type="checkbox" /><span class="step-text">Feel the throat center awaken. This is the bridge between vision and form — the point where the unspoken Word begins to take shape.</span></li>
+  </ol>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <!-- TIPHARETH -->
+  <h2><span class="num">IV.</span>Tiphareth — The Heart</h2>
+  <p class="section-sub"><span class="color-swatch" style="background:#f3d989;color:#f3d989"></span>Radiant golden-yellow light. At the heart / solar plexus.</p>
+  <ol class="steps" data-section="tiphareth">
+    <li><input type="checkbox" /><span class="step-text">Draw the beam further down to the center of the chest, at the heart. Form a sphere of <strong>brilliant golden-yellow sunlight</strong> — warm, radiant, like a small inner sun.</span></li>
+    <li><input type="checkbox" /><span class="step-text">Vibrate the divine name three or four times: <span class="vibration">YHVH ELOAH VE-DAATH</span> <span class="note">(Yod-Heh-Vav-Heh El-oh-ah v'Dah-ath)</span></span></li>
+    <li><input type="checkbox" /><span class="step-text">As the heart-sun blazes, gently place your written intention into the center of it. See the words — or the felt image of the result — dissolving into the gold, becoming part of the light itself.
+      <div class="note">This is the <strong>seat of manifestation</strong>. Tiphareth is the harmonizing center where will, feeling, and image fuse. Charge it once, with feeling, then release it.</div>
+    </span></li>
+  </ol>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <!-- YESOD -->
+  <h2><span class="num">V.</span>Yesod — The Foundation</h2>
+  <p class="section-sub"><span class="color-swatch" style="background:#7a4fb0;color:#7a4fb0"></span>Deep violet light. At the pelvis / region of the generative organs.</p>
+  <ol class="steps" data-section="yesod">
+    <li><input type="checkbox" /><span class="step-text">Draw the light further down to the pelvic region. Form a sphere of <strong>deep violet light</strong>, rich as twilight.</span></li>
+    <li><input type="checkbox" /><span class="step-text">Vibrate the divine name three or four times: <span class="vibration">SHADDAI EL CHAI</span> <span class="note">(Shah-dai El Chai — "Almighty Living God")</span></span></li>
+    <li><input type="checkbox" /><span class="step-text">Feel this center receive the impressed intention from the heart and clothe it in subtle, etheric substance — the astral mold of what is being born into the world.</span></li>
+  </ol>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <!-- MALKUTH -->
+  <h2><span class="num">VI.</span>Malkuth — The Kingdom</h2>
+  <p class="section-sub"><span class="color-swatch" style="background:#5c5340;color:#5c5340"></span>The four earth-colors: citrine, olive, russet, black. Beneath the feet.</p>
+  <ol class="steps" data-section="malkuth">
+    <li><input type="checkbox" /><span class="step-text">Draw the beam of light from Yesod down through the legs and into the soles of the feet. Form a sphere of light just beneath your feet, banded in the <strong>four colors of earth — citrine, olive, russet, and black</strong>.</span></li>
+    <li><input type="checkbox" /><span class="step-text">Vibrate the divine name three or four times: <span class="vibration">ADONAI HA-ARETZ</span> <span class="note">(Ah-doh-nai Hah-Ah-retz — "Lord of the Earth")</span></span></li>
+    <li><input type="checkbox" /><span class="step-text">Feel your intention rooted now in the physical world. The current has descended through every plane — divine, mental, astral, etheric, physical — and is anchored. The work is real.</span></li>
+    <li><input type="checkbox" /><span class="step-text">Pause. Sense all five spheres glowing along the axis of your body — a living pillar of light from above your head to beneath your feet.</span></li>
+  </ol>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <!-- CIRCULATION -->
+  <h2><span class="num">VII.</span>The Circulation of the Light</h2>
+  <p class="section-sub">Charge the entire aura with the descended current. Three circulations — each amplifies the work.</p>
+
+  <p class="sphere-label center">— First Circulation: The Fountain —</p>
+  <ol class="steps" data-section="fountain">
+    <li><input type="checkbox" /><span class="step-text">Return attention to Kether. As you <strong>inhale</strong>, draw light up the left side of your body from Malkuth to Kether.</span></li>
+    <li><input type="checkbox" /><span class="step-text">As you <strong>exhale</strong>, let the light pour down the right side of your body, from Kether back to Malkuth. Feel it surrounding you like a cloak of luminous mist.</span></li>
+    <li><input type="checkbox" /><span class="step-text">Repeat this side-to-side circulation for several breaths until you feel the aura humming with light.</span></li>
+  </ol>
+
+  <p class="sphere-label center">— Second Circulation: Front &amp; Back —</p>
+  <ol class="steps" data-section="frontback">
+    <li><input type="checkbox" /><span class="step-text">On the <strong>inhale</strong>, draw light up the front of the body from Malkuth to Kether.</span></li>
+    <li><input type="checkbox" /><span class="step-text">On the <strong>exhale</strong>, let it descend down the back of the body from Kether to Malkuth. Continue for several breaths.</span></li>
+  </ol>
+
+  <p class="sphere-label center">— Third Circulation: The Ribbon —</p>
+  <ol class="steps" data-section="ribbon">
+    <li><input type="checkbox" /><span class="step-text">Return attention to Malkuth at the feet. On a long, slow <strong>inhale</strong>, draw the light straight up the central pillar, gathering it into Kether above the crown.</span></li>
+    <li><input type="checkbox" /><span class="step-text">On the <strong>exhale</strong>, let the light cascade out from Kether like a fountain of brilliance — pouring down around you on all sides, bathing the entire aura, and gathering once more at Malkuth.</span></li>
+    <li><input type="checkbox" /><span class="step-text">Repeat the fountain three to six times. Each cycle, see your intention more vividly woven into the sphere of light around you.</span></li>
+  </ol>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <!-- CHARGING / SEALING -->
+  <h2><span class="num">VIII.</span>Charging &amp; Sealing the Manifestation</h2>
+  <p class="section-sub">The current is built. Now seal the work — speak it, feel it as accomplished, and release.</p>
+  <ol class="steps" data-section="charge">
+    <li><input type="checkbox" /><span class="step-text">Place both hands over the heart-center (Tiphareth). Feel the inner sun there, charged with your intention.</span></li>
+    <li><input type="checkbox" /><span class="step-text">Speak your intention aloud once, slowly, in the <em>present tense</em>, as though it is already real. Feel it in the body — gratitude, certainty, completion.</span></li>
+    <li><input type="checkbox" /><span class="step-text">Proclaim:
+      <blockquote>"As above, so below.<br/>The light has descended; the work is done.<br/>So mote it be."</blockquote>
+    </span></li>
+    <li><input type="checkbox" /><span class="step-text">Release attachment to the outcome. Trust the current to do its work. Open your eyes when ready.</span></li>
+  </ol>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <!-- CLOSING -->
+  <h2><span class="num">IX.</span>The Closing</h2>
+  <p class="section-sub">Ground and seal. Return to ordinary awareness.</p>
+  <ol class="steps" data-section="close">
+    <li><input type="checkbox" /><span class="step-text">Let the five spheres soften into a single warm glow within the body. Do not banish the light — it is yours.</span></li>
+    <li><input type="checkbox" /><span class="step-text">Perform the Qabalistic Cross to seal the rite:
+      <br/>Touch forehead: <span class="vibration">ATEH</span> · chest: <span class="vibration">MALKUTH</span> · right shoulder: <span class="vibration">VE-GEBURAH</span> · left shoulder: <span class="vibration">VE-GEDULAH</span> · clasp hands: <span class="vibration">LE-OLAM, AMEN</span>
+    </span></li>
+    <li><input type="checkbox" /><span class="step-text">Stand silently for a moment. Take three normal breaths. Feel your feet on the ground. Eat or drink something small to fully return to embodied awareness. The ritual is complete.</span></li>
+  </ol>
+
+  <div class="center" style="margin-top: 40px;">
+    <button class="reset" id="reset">Reset Progress</button>
+  </div>
+
+  <footer>
+    "As above, so below.<br/>
+    The light has descended; the work is done."
+    <br/><br/>
+    <span style="color: var(--gold-dim); font-size: 0.85em;">✦ Practice daily. The pillar grows by repetition. ✦</span>
+  </footer>
+
+</div>
+
+<script>
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  const bar = document.getElementById('bar');
+  const label = document.getElementById('label');
+  const desire = document.getElementById('desire');
+  const KEY = 'middle-pillar-progress-v1';
+  const DESIRE_KEY = 'middle-pillar-desire-v1';
+
+  function save() {
+    const state = Array.from(checkboxes).map(c => c.checked);
+    localStorage.setItem(KEY, JSON.stringify(state));
+  }
+  function load() {
+    try {
+      const raw = localStorage.getItem(KEY);
+      if (raw) {
+        const state = JSON.parse(raw);
+        checkboxes.forEach((c, i) => {
+          if (state[i]) {
+            c.checked = true;
+            c.closest('li').classList.add('done');
+          }
+        });
+      }
+      const d = localStorage.getItem(DESIRE_KEY);
+      if (d && desire) desire.value = d;
+    } catch(e) {}
+  }
+  function updateProgress() {
+    const total = checkboxes.length;
+    const done = Array.from(checkboxes).filter(c => c.checked).length;
+    const pct = total ? (done / total) * 100 : 0;
+    bar.style.width = pct + '%';
+    label.textContent = done + ' of ' + total + ' completed';
+  }
+  checkboxes.forEach(c => {
+    c.addEventListener('change', () => {
+      c.closest('li').classList.toggle('done', c.checked);
+      save();
+      updateProgress();
+    });
+  });
+  if (desire) {
+    desire.addEventListener('input', () => {
+      localStorage.setItem(DESIRE_KEY, desire.value);
+    });
+  }
+  document.getElementById('reset').addEventListener('click', () => {
+    checkboxes.forEach(c => {
+      c.checked = false;
+      c.closest('li').classList.remove('done');
+    });
+    save();
+    updateProgress();
+  });
+  load();
+  updateProgress();
+</script>
+</body>
+</html>
